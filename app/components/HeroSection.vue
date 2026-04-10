@@ -13,27 +13,14 @@
 
       <!-- Hero text content — fades out after scroll begins -->
       <div class="hero-content" :style="{ opacity: contentOpacity }">
-        <!-- Badge -->
-        <div
-          v-motion
-          :initial="{ opacity: 0, y: -20 }"
-          :enter="{ opacity: 1, y: 0, transition: { delay: 100, duration: 600 } }"
-          class="liquid-glass rounded-full px-1 py-1 flex items-center gap-2 mb-8"
-        >
-          <span class="bg-white text-black rounded-full px-3 py-1 text-xs font-semibold font-body">
-            New
-          </span>
-          <span class="text-white/80 text-xs font-body pr-3">
-            Introducing AI-powered truck fleet web design.
-          </span>
-        </div>
+    
 
         <!-- Heading -->
         <h1
           class="text-6xl md:text-7xl lg:text-[5.5rem] font-heading italic text-white leading-[0.85] max-w-3xl tracking-[-4px] mb-6"
         >
           <BlurText
-            text="The Fleet Website Your Brand Deserves"
+            text="Adinan Chettan Ki Truck"
             :by-word="true"
             :delay="100"
             :start-delay="200"
@@ -52,8 +39,7 @@
           }"
           class="text-sm md:text-base text-white/70 font-body font-light leading-relaxed max-w-lg mb-8"
         >
-          Stunning design. Blazing performance. Built by AI, refined by experts.
-          This is fleet web design, wildly reimagined.
+          The Best truck ever in the market. Scroll the feel.
         </p>
 
         <!-- CTA Buttons -->
@@ -68,24 +54,7 @@
           }"
           class="flex items-center gap-4"
         >
-          <a
-            href="#contact"
-            class="liquid-glass-strong rounded-full px-5 py-2.5 text-sm font-body font-medium text-white flex items-center gap-2 hover:scale-105 transition-transform"
-          >
-            Get Started
-            <ArrowUpRight :size="16" />
-          </a>
-          <a
-            href="#work"
-            class="flex items-center gap-2 text-white/70 hover:text-white text-sm font-body transition-colors"
-          >
-            <div
-              class="w-8 h-8 rounded-full liquid-glass-strong flex items-center justify-center"
-            >
-              <Play :size="12" fill="white" class="ml-0.5" />
-            </div>
-            Watch the Film
-          </a>
+         
         </div>
       </div>
 
