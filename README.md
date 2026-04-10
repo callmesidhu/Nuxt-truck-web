@@ -27,6 +27,7 @@ npm install -g pnpm
 
 ### 📥 Clone the Project
 git clone https://github.com/callmesidhu/Nuxt-truck-web.git
+---
 cd Nuxt-truck-web
 
 ### 📦 Install Dependencies
@@ -34,7 +35,6 @@ pnpm install
 
 ### 🚀 Run Development Server
 pnpm dev
-
 Now open your browser:
 
 👉 http://localhost:3000
