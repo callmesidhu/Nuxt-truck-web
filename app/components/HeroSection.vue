@@ -82,8 +82,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, computed } from 'vue'
-import { ArrowUpRight, Play } from 'lucide-vue-next'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 // ─── Sequence configuration ───────────────────────────────────────────────────
 const SEQUENCES = [
@@ -107,9 +106,6 @@ const SCROLL_PER_FRAME = 8
 
 // Total frames across all sequences
 const totalFrames = SEQUENCES.reduce((sum, s) => sum + s.count, 0)
-
-// Total scroll height for the section
-const scrollHeight = computed(() => totalFrames * SCROLL_PER_FRAME + window.innerHeight)
 
 // ─── Refs ─────────────────────────────────────────────────────────────────────
 const heroSection = ref<HTMLElement | null>(null)
@@ -141,9 +137,7 @@ function getFramePath(globalIndex: number): string {
 }
 
 // ─── Canvas rendering ─────────────────────────────────────────────────────────
-let currentFrame = 0
 let ctx: CanvasRenderingContext2D | null = null
-let rafId: number | null = null
 
 function renderFrame(index: number) {
   const canvas = heroCanvas.value
@@ -166,6 +160,36 @@ function renderFrame(index: number) {
 
   ctx.clearRect(0, 0, cw, ch)
   ctx.drawImage(img, sx, sy, sw, sh)
+}
+
+// ─── Smooth lerp animation loop ───────────────────────────────────────────────
+// LERP_FACTOR: 0.08 = very silky, 0.18 = snappier
+const LERP_FACTOR = 0.11
+
+let targetFrame = 0       // integer frame scroll position demands
+let smoothFrame = 0       // float that lerps toward targetFrame each rAF tick
+let lastRenderedFrame = -1
+let animLoopId: number | null = null
+
+function animLoop() {
+  smoothFrame += (targetFrame - smoothFrame) * LERP_FACTOR
+
+  const clamped = Math.max(0, Math.min(totalFrames - 1, Math.round(smoothFrame)))
+
+  if (clamped !== lastRenderedFrame) {
+    // Fall back to nearest already-loaded frame
+    let frame = clamped
+    if (!imageCache[frame]?.complete) {
+      for (let d = 1; d < 20; d++) {
+        const prev = frame - d
+        if (prev >= 0 && imageCache[prev]?.complete) { frame = prev; break }
+      }
+    }
+    renderFrame(frame)
+    lastRenderedFrame = clamped
+  }
+
+  animLoopId = requestAnimationFrame(animLoop)
 }
 
 // ─── Preloading ───────────────────────────────────────────────────────────────
@@ -218,40 +242,35 @@ function loadFrame(index: number, onLoad?: () => void) {
   imageCache[index] = img
 }
 
-// ─── Scroll handler ───────────────────────────────────────────────────────────
+// ─── Scroll handler — only updates targetFrame; lerp loop does the rendering ──
 function onScroll() {
   const section = heroSection.value
   if (!section) return
 
   const rect = section.getBoundingClientRect()
-  const scrolled = -rect.top // how far we've scrolled into the section
+  const scrolled = -rect.top
   const totalScroll = rect.height - window.innerHeight
 
   if (scrolled <= 0) {
-    // Before section — show initial frame and full content
     contentOpacity.value = 1
     scrollHintOpacity.value = 1
     chapterLabelOpacity.value = 0
     activeChapter.value = -1
-    setFrame(0)
+    targetFrame = 0
     return
   }
 
   if (scrolled >= totalScroll) {
-    // Past section — show last frame
     contentOpacity.value = 0
     scrollHintOpacity.value = 0
-    setFrame(totalFrames - 1)
+    targetFrame = totalFrames - 1
     return
   }
 
   const progress = scrolled / totalScroll
 
-  // Calculate target frame
-  const targetFrame = Math.min(
-    Math.floor((scrolled / SCROLL_PER_FRAME)),
-    totalFrames - 1
-  )
+  // Update target — lerp loop eases into it
+  targetFrame = Math.min(Math.floor(scrolled / SCROLL_PER_FRAME), totalFrames - 1)
 
   // Fade out hero content in first 10% of scroll
   const fadeOutEnd = 0.08
@@ -286,30 +305,6 @@ function onScroll() {
     frameAccum = seqEnd
   }
 
-  setFrame(targetFrame)
-}
-
-function setFrame(index: number) {
-  if (index === currentFrame && imageCache[index]?.complete) return
-
-  // Find nearest loaded frame if target isn't ready
-  let frame = index
-  if (!imageCache[frame] || !imageCache[frame]!.complete) {
-    // Search nearby frames
-    for (let delta = 1; delta < 20; delta++) {
-      const prev = frame - delta
-      if (prev >= 0 && imageCache[prev]?.complete) {
-        frame = prev
-        break
-      }
-    }
-  }
-
-  if (frame !== currentFrame) {
-    currentFrame = frame
-    if (rafId) cancelAnimationFrame(rafId)
-    rafId = requestAnimationFrame(() => renderFrame(frame))
-  }
 }
 
 // ─── Canvas resize ────────────────────────────────────────────────────────────
@@ -318,7 +313,7 @@ function resizeCanvas() {
   if (!canvas) return
   canvas.width = window.innerWidth
   canvas.height = window.innerHeight
-  renderFrame(currentFrame)
+  renderFrame(Math.max(0, lastRenderedFrame))
 }
 
 // ─── Lifecycle ────────────────────────────────────────────────────────────────
@@ -336,17 +331,19 @@ onMounted(() => {
 
   preloadFrames()
 
+  // Kick off the smooth lerp loop — runs every rAF tick independent of scroll
+  animLoopId = requestAnimationFrame(animLoop)
+
   window.addEventListener('scroll', onScroll, { passive: true })
   window.addEventListener('resize', resizeCanvas, { passive: true })
 
-  // Initial scroll state evaluation
   onScroll()
 })
 
 onUnmounted(() => {
   window.removeEventListener('scroll', onScroll)
   window.removeEventListener('resize', resizeCanvas)
-  if (rafId) cancelAnimationFrame(rafId)
+  if (animLoopId) cancelAnimationFrame(animLoopId)
 })
 </script>
 
