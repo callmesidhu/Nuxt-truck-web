@@ -26,8 +26,8 @@ Make sure you have these installed:
 npm install -g pnpm
 
 📥 Clone the Project
-git clone https://github.com/callmesidhu/Nuxt-truck-web.git
 
+git clone https://github.com/callmesidhu/Nuxt-truck-web.git
 cd Nuxt-truck-web
 
 📦 Install Dependencies
