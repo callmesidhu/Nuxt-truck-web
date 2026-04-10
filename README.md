@@ -12,7 +12,7 @@ GitHub: https://github.com/callmesidhu/Nuxt-truck-web.git
 
 ## 🧰 Requirements
 
-Make sure you have these installed:
+### Make sure you have these installed:
 
 - Node.js (>= 18 recommended)
 - pnpm
@@ -25,15 +25,14 @@ Make sure you have these installed:
 
 npm install -g pnpm
 
-📥 Clone the Project
-
+### 📥 Clone the Project
 git clone https://github.com/callmesidhu/Nuxt-truck-web.git
 cd Nuxt-truck-web
 
-📦 Install Dependencies
+### 📦 Install Dependencies
 pnpm install
 
-🚀 Run Development Server
+### 🚀 Run Development Server
 pnpm dev
 
 Now open your browser:
