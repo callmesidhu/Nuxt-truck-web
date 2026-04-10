@@ -12,7 +12,7 @@
           Why Us
         </div>
         <h2 class="text-4xl md:text-5xl lg:text-6xl font-heading italic text-white tracking-tight leading-[0.9] max-w-xl">
-          <BlurText text="The difference is everything." :by-word="true" :delay="100" />
+          <BlurText text="Why New Era is different." :by-word="true" :delay="100" />
         </h2>
       </div>
 
@@ -42,28 +42,28 @@
 </template>
 
 <script setup lang="ts">
-import { Zap, Palette, BarChart3, Shield } from 'lucide-vue-next'
+import { Zap, Settings, Truck, Shield } from 'lucide-vue-next'
 
 const features = [
   {
+    icon: Truck,
+    title: 'Saudi-Built Excellence',
+    body: 'Engineered and assembled in the Kingdom, our vehicles meet the highest international standards of quality and performance.',
+  },
+  {
+    icon: Settings,
+    title: 'Full Customisation',
+    body: 'Every vehicle tailored to your specification — from powertrain options to interior finishes and fleet branding.',
+  },
+  {
     icon: Zap,
-    title: 'Days, Not Months',
-    body: 'Concept to launch at a pace that redefines fast. Because waiting isn\'t a strategy.',
-  },
-  {
-    icon: Palette,
-    title: 'Obsessively Crafted',
-    body: 'Every detail considered. Every element refined. Design so precise, it feels inevitable.',
-  },
-  {
-    icon: BarChart3,
-    title: 'Built to Convert',
-    body: 'Layouts informed by data. Decisions backed by performance. Results you can measure.',
+    title: 'Fleet Solutions',
+    body: 'Dedicated fleet programs for government, logistics, and enterprise — with volume pricing and priority service.',
   },
   {
     icon: Shield,
-    title: 'Secure by Default',
-    body: 'Enterprise-grade protection comes standard. SSL, DDoS mitigation, compliance. All included.',
+    title: 'Desert-Grade Durability',
+    body: 'Purpose-built for extreme heat, sand, and long-haul desert journeys. Reliability you can count on, anywhere.',
   },
 ]
 </script>

@@ -11,7 +11,7 @@
         Capabilities
       </div>
       <h2 class="text-4xl md:text-5xl lg:text-6xl font-heading italic text-white tracking-tight leading-[0.9] max-w-2xl">
-        <BlurText text="Pro features. Zero complexity." :by-word="true" :delay="100" />
+        <BlurText text="Built to outperform. Built to last." :by-word="true" :delay="100" />
       </h2>
     </div>
 
@@ -25,18 +25,18 @@
       <!-- Content -->
       <div class="flex-1 flex flex-col items-start">
         <h3 class="text-3xl md:text-4xl font-heading italic text-white leading-[0.9] mb-5">
-          Designed to convert.<br />Built to perform.
+          Engineered for the Kingdom.<br />Built for the World.
         </h3>
         <p class="text-white/60 font-body font-light text-sm md:text-base leading-relaxed mb-8 max-w-md">
-          Every pixel is intentional. Our AI studies what works across thousands of top fleet
-          sites — then builds yours to outperform them all. From load speed to conversion flows,
-          nothing is left to chance.
+          Every New Era vehicle is precision-engineered to handle Saudi Arabia's most demanding
+          terrain and climate. Advanced chassis tuning, heat-resistant materials, and
+          next-generation powertrains ensure maximum performance in every condition.
         </p>
         <a
           href="#contact"
-          class="liquid-glass-strong rounded-full px-5 py-2.5 text-sm font-body font-medium text-white flex items-center gap-2 hover:scale-105 transition-transform"
+          class="btn-red rounded-full px-5 py-2.5 text-sm font-body font-medium text-white flex items-center gap-2"
         >
-          Learn more
+          View Specs
           <ArrowUpRight :size="16" />
         </a>
       </div>
@@ -63,17 +63,18 @@
       <!-- Content -->
       <div class="flex-1 flex flex-col items-start">
         <h3 class="text-3xl md:text-4xl font-heading italic text-white leading-[0.9] mb-5">
-          It gets smarter.<br />Automatically.
+          Safety First.<br />Zero Compromise.
         </h3>
         <p class="text-white/60 font-body font-light text-sm md:text-base leading-relaxed mb-8 max-w-md">
-          Your site evolves on its own. AI monitors every click, scroll, and conversion — then
-          optimizes in real time. No manual updates. Ever. Just a site that gets better every day.
+          New Era trucks come standard with advanced driver-assist systems, reinforced steel
+          frames, and 360° sensor arrays. Whether navigating city streets or open desert highways,
+          safety is never optional — it's built in.
         </p>
         <a
           href="#contact"
-          class="liquid-glass-strong rounded-full px-5 py-2.5 text-sm font-body font-medium text-white flex items-center gap-2 hover:scale-105 transition-transform"
+          class="btn-red rounded-full px-5 py-2.5 text-sm font-body font-medium text-white flex items-center gap-2"
         >
-          See how it works
+          Safety Features
           <ArrowUpRight :size="16" />
         </a>
       </div>

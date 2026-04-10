@@ -47,9 +47,9 @@
 
 <script setup lang="ts">
 const stats = [
-  { value: '200+', label: 'Sites launched' },
-  { value: '98%', label: 'Client satisfaction' },
-  { value: '3.2x', label: 'More conversions' },
-  { value: '5 days', label: 'Average delivery' },
+  { value: '10,000+', label: 'Vehicles Delivered' },
+  { value: '98%', label: 'Client Satisfaction' },
+  { value: '25+', label: 'Years of Excellence' },
+  { value: '13', label: 'Saudi Regions Covered' },
 ]
 </script>

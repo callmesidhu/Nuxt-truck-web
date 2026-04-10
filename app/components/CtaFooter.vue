@@ -28,7 +28,7 @@
         :visible="{ opacity: 1, y: 0, transition: { duration: 700 } }"
         class="text-5xl md:text-6xl lg:text-7xl font-heading italic text-white leading-[0.85] max-w-3xl mb-6"
       >
-        <BlurText text="Your next website starts here." :by-word="true" :delay="100" />
+        <BlurText text="The road starts here." :by-word="true" :delay="100" />
       </h2>
 
       <!-- Subtext -->
@@ -38,8 +38,8 @@
         :visible="{ opacity: 1, y: 0, transition: { delay: 300, duration: 600 } }"
         class="text-white/60 font-body font-light text-sm md:text-base max-w-lg mb-10 leading-relaxed"
       >
-        Book a free strategy call. See what AI-powered design can do for your fleet business.
-        No commitment, no pressure. Just possibilities.
+        Speak with a New Era specialist today. Configure your fleet, request a quote,
+        or visit one of our showrooms across the Kingdom.
       </p>
 
       <!-- Buttons -->
@@ -50,29 +50,29 @@
         class="flex items-center gap-4 flex-wrap justify-center"
       >
         <a
-          href="mailto:hello@alphatech.trucks"
-          class="liquid-glass-strong rounded-full px-6 py-3 text-sm font-body font-medium text-white flex items-center gap-2 hover:scale-105 transition-transform"
+          href="mailto:contact@newera.com.sa"
+          class="btn-red rounded-full px-6 py-3 text-sm font-body font-medium text-white flex items-center gap-2"
         >
-          Book a Call
+          Request a Quote
           <ArrowUpRight :size="16" />
         </a>
         <a
-          href="#pricing"
-          class="bg-white text-black rounded-full px-6 py-3 text-sm font-body font-medium hover:opacity-90 hover:scale-105 transition-all"
+          href="#services"
+          class="liquid-glass-strong text-white rounded-full px-6 py-3 text-sm font-body font-medium hover:scale-105 transition-all flex items-center gap-2"
         >
-          View Pricing
+          View Models
         </a>
       </div>
 
       <!-- Footer bar -->
       <div class="mt-32 pt-8 border-t border-white/10 w-full max-w-5xl flex items-center justify-between flex-wrap gap-4">
         <p class="text-white/40 text-xs font-body">
-          © 2026 AlphaTech Trucks. All rights reserved.
+          © 2026 New Era Automotive, Saudi Arabia. All rights reserved.
         </p>
         <div class="flex items-center gap-6">
           <a href="#" class="text-white/40 text-xs font-body hover:text-white/70 transition-colors">Privacy</a>
           <a href="#" class="text-white/40 text-xs font-body hover:text-white/70 transition-colors">Terms</a>
-          <a href="mailto:hello@alphatech.trucks" class="text-white/40 text-xs font-body hover:text-white/70 transition-colors">Contact</a>
+          <a href="mailto:contact@newera.com.sa" class="text-white/40 text-xs font-body hover:text-white/70 transition-colors">Contact</a>
         </div>
       </div>
     </div>

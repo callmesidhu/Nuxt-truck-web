@@ -20,7 +20,7 @@
           class="text-6xl md:text-7xl lg:text-[5.5rem] font-heading italic text-white leading-[0.85] max-w-3xl tracking-[-4px] mb-6"
         >
           <BlurText
-            text="Adinan Chettan Ki Truck"
+            text="New Era International"
             :by-word="true"
             :delay="100"
             :start-delay="200"
@@ -39,7 +39,7 @@
           }"
           class="text-sm md:text-base text-white/70 font-body font-light leading-relaxed max-w-lg mb-8"
         >
-          The Best truck ever in the market. Scroll the feel.
+          The most powerful trucks in the Kingdom. Built to conquer any terrain.
         </p>
 
         <!-- CTA Buttons -->
@@ -94,11 +94,11 @@ const SEQUENCES = [
 ]
 
 const chapters = [
-  'Power Unleashed',
+  'Raw Power. Redefined.',
   'Precision Engineered',
-  'Built to Dominate',
-  'The Road Ahead',
-  'Your Brand. Elevated.',
+  'Built for the Kingdom',
+  'Dominate Every Road',
+  'The New Era Begins.',
 ]
 
 // Pixels of scroll per frame (lower = faster animation)
@@ -441,7 +441,7 @@ onUnmounted(() => {
 .scroll-hint-line {
   width: 1px;
   height: 48px;
-  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.6));
+  background: linear-gradient(to bottom, transparent, #E31E24);
   animation: scroll-hint-pulse 2s ease-in-out infinite;
 }
 
@@ -481,7 +481,8 @@ onUnmounted(() => {
   font-size: 1.1rem;
   font-weight: 400;
   font-style: italic;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.9);
   letter-spacing: -0.02em;
+  text-shadow: 0 0 20px rgba(227, 30, 36, 0.5);
 }
 </style>

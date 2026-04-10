@@ -12,7 +12,7 @@
           What They Say
         </div>
         <h2 class="text-4xl md:text-5xl lg:text-6xl font-heading italic text-white tracking-tight leading-[0.9] max-w-xl">
-          <BlurText text="Don't take our word for it." :by-word="true" :delay="100" />
+          <BlurText text="Trusted across the Kingdom." :by-word="true" :delay="100" />
         </h2>
       </div>
 
@@ -47,21 +47,21 @@
 const testimonials = [
   {
     quote:
-      'A complete rebuild in five days. The result outperformed everything we\'d spent months building before.',
-    name: 'Sarah Chen',
-    role: 'CEO, Luminary',
+      'We replaced our entire logistics fleet with New Era trucks. The performance in desert conditions is unmatched — zero breakdowns in 18 months.',
+    name: 'Khalid Al-Mansouri',
+    role: 'Fleet Director, Al-Mansouri Logistics',
   },
   {
     quote:
-      'Conversions up 4x. That\'s not a typo. The design just works differently when it\'s built on real data.',
-    name: 'Marcus Webb',
-    role: 'Head of Growth, Arcline',
+      'The quality is world-class. Our executive SUVs arrived fully customised, on time, and have exceeded every expectation. New Era is the only name we trust.',
+    name: 'Fatima Al-Rashidi',
+    role: 'Operations Manager, Royal Prestige Group',
   },
   {
     quote:
-      'They didn\'t just design our site. They defined our brand. World-class doesn\'t begin to cover it.',
-    name: 'Elena Voss',
-    role: 'Brand Director, Helix',
+      'As a government fleet supplier, reliability is non-negotiable. New Era delivered 500 vehicles without a single defect. Exceptional.',
+    name: 'Mohammed Al-Zahrani',
+    role: 'Procurement Head, Ministry of Transport',
   },
 ]
 </script>

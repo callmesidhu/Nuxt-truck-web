@@ -41,7 +41,7 @@
         class="text-4xl md:text-5xl lg:text-6xl font-heading italic text-white tracking-tight leading-[0.9] max-w-2xl mb-6"
       >
         <BlurText
-          text="You dream it. We ship it."
+          text="Your Journey. Our Legacy."
           :by-word="true"
           :delay="120"
           :start-delay="100"
@@ -55,8 +55,8 @@
         :visible="{ opacity: 1, y: 0, transition: { delay: 400, duration: 600 } }"
         class="text-white/60 font-body font-light text-sm md:text-base max-w-xl mb-10 leading-relaxed"
       >
-        Share your fleet brand vision. Our AI handles the rest — wireframes, design, code, launch.
-        All in days, not quarters.
+        From Saudi Arabia to the world — New Era delivers automotive excellence
+        engineered for power, reliability, and prestige. Every vehicle, a statement.
       </p>
 
       <!-- CTA -->
@@ -65,9 +65,9 @@
         :initial="{ opacity: 0, y: 20 }"
         :visible="{ opacity: 1, y: 0, transition: { delay: 600, duration: 600 } }"
         href="#contact"
-        class="liquid-glass-strong rounded-full px-6 py-3 text-sm font-body font-medium text-white flex items-center gap-2 hover:scale-105 transition-transform"
+        class="btn-red rounded-full px-6 py-3 text-sm font-body font-medium text-white flex items-center gap-2"
       >
-        Get Started
+        Explore Models
         <ArrowUpRight :size="16" />
       </a>
 
@@ -100,18 +100,18 @@ import { ArrowUpRight } from 'lucide-vue-next'
 const steps = [
   {
     num: '01',
-    title: 'Brief Your Vision',
-    body: 'Tell us about your fleet, brand, and goals. Our AI absorbs every detail instantly.',
+    title: 'Choose Your Model',
+    body: 'Explore New Era\'s full lineup — from heavy-duty fleet trucks to executive SUVs built for Saudi roads.',
   },
   {
     num: '02',
-    title: 'AI Designs & Builds',
-    body: 'Wireframes, design, copy, and code — generated and refined at machine speed.',
+    title: 'Custom Configuration',
+    body: 'Spec your vehicle — engine, finish, interior, and fleet options — all tailored to your exact needs.',
   },
   {
     num: '03',
-    title: 'Launch & Grow',
-    body: 'Go live in days. Your site auto-optimises as data flows in. Zero manual updates.',
+    title: 'Delivered with Pride',
+    body: 'White-glove delivery anywhere in the Kingdom. Warranty, service, and lifetime support included.',
   },
 ]
 </script>
